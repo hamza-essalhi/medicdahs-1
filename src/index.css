@@ -1,0 +1,815 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  font-family: "Heebo", sans-serif !important;
+}
+
+@media (max-width: 640px) {
+  .react-calendar * {
+    font-size: 0.6rem !important;
+  }
+}
+@layer components {
+  .bg-img {
+    background-image: url("./images/2645.jpg");
+    background-size: cover;
+    height: 100vh;
+  }
+  .main-color {
+    color: #1F6E8C;
+  }
+  .active-color {
+    color: #BE3144;
+  }
+  .color-error {
+    color: #e74c3c;
+  }
+  .color-info {
+    color: #3498db;
+  }
+  .color-success {
+    color: #2ecc71;
+  }
+  .color-warning {
+    color: #f39c12;
+  }
+}
+/* Your regular styles */
+@media print {
+  /* Styles for print media */
+  @page {
+    margin: 0;
+  }
+  body {
+    margin: 1.6cm;
+  }
+  .hide-on-print {
+    display: none; /* Hide elements with this class on print */
+  }
+  .header {
+    width: 50%;
+  }
+}
+.react-calendar {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.react-calendar abbr {
+  text-decoration: none;
+}
+
+.react-calendar .react-calendar__tile--now {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.react-calendar .react-calendar__tile--active {
+  background-color: #BE3144;
+  color: white;
+}
+
+.react-calendar .react-calendar__tile--active:enabled:hover,
+.react-calendar .react-calendar__tile--active:enabled:focus {
+  background: #BE3144;
+}
+
+.react-calendar .react-calendar__tile {
+  border-radius: 5px;
+  transition: 0.1s;
+  margin: 5px;
+}
+.react-calendar .react-calendar__tile:hover {
+  background-color: #f39c12 !important;
+  font-weight: bolder;
+  color: white;
+}
+
+.react-calendar__navigation__arrow, .react-calendar__navigation__label {
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.react-calendar__navigation__arrow:hover, .react-calendar__navigation__label:hover {
+  background-color: #f39c12 !important;
+  font-weight: bolder;
+  color: white;
+}
+
+.error-404 {
+  background-color: #4BCADB;
+  height: 100vh;
+}
+.error-404 span {
+  font-family: "Black Ops One", system-u !important;
+  color: white;
+}
+
+.main {
+  background-image: url("./images/2645.jpg");
+  margin: 0;
+  /* Remove any default margin on the body */
+  background-position: center;
+  background-repeat: repeat;
+  height: -moz-max-content;
+  height: max-content;
+}
+.main .main-container {
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.side-nav {
+  border-right: 2px white solid;
+}
+.side-nav .active-link {
+  background-color: #BE3144;
+}
+.side-nav .side-nav-icon {
+  color: white;
+  font-size: 30px;
+  margin: 0.3em;
+  padding: 8px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.side-nav .side-nav-icon:hover {
+  background-color: #1F6E8C;
+  transform: scale(1.04);
+}
+
+.top-nav {
+  justify-content: space-between;
+}
+.top-nav .nav-container {
+  justify-content: space-between;
+}
+.top-nav form input {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 20px;
+  padding: 10px;
+  outline: none;
+  transition: 0.2s;
+}
+.top-nav form input:hover, .top-nav form input:active, .top-nav form input:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+.top-nav form button {
+  color: #1F6E8C;
+  border-radius: 100%;
+  background-color: white;
+  padding: 10px;
+  margin: 0.3em;
+  transition: 0.2s;
+}
+.top-nav form button:hover, .top-nav form button:active, .top-nav form button:focus {
+  color: white;
+  background-color: #1F6E8C;
+}
+.top-nav form .input-icon {
+  font-size: 20px;
+}
+.top-nav .fixedSearech {
+  width: 100%;
+  margin-top: 5px;
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 20px;
+  padding: 6px;
+  outline: none;
+  transition: 0.2s;
+}
+.top-nav .fixedSearech:hover, .top-nav .fixedSearech:active, .top-nav .fixedSearech:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+.top-nav img {
+  border-radius: 100%;
+  border: 2px white solid;
+  transition: 0.3s;
+}
+.top-nav img:hover, .top-nav img:active, .top-nav img:focus {
+  border: 2px #1F6E8C solid;
+  transform: scale(1.03);
+}
+
+.right-top-nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 100%;
+  transition: 0.3s;
+  margin-right: 0.3em;
+}
+.right-top-nav div:hover, .right-top-nav div:active, .right-top-nav div:focus {
+  background-color: #1F6E8C;
+}
+.right-top-nav div:hover *, .right-top-nav div:active *, .right-top-nav div:focus * {
+  color: white;
+}
+.right-top-nav div .right-top-nav-icon {
+  color: #1F6E8C;
+}
+
+.menu-visible-icon {
+  display: none;
+  background-color: white;
+  color: #1F6E8C;
+  padding: 8px;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-size: 40px;
+}
+.menu-visible-icon:hover {
+  background-color: #1F6E8C;
+  color: white;
+}
+
+.home .home-icon {
+  color: white;
+}
+.home .chart {
+  background-color: rgba(255, 255, 255, 0.5647058824);
+  border-radius: 10px;
+}
+.home .chart .main-row {
+  margin-bottom: 2em;
+}
+.home .chart .row span {
+  color: white;
+  font-size: 16px;
+  background-color: #1F6E8C;
+  padding: 8px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.home .chart .row span:hover {
+  background-color: #0c2c38;
+  transform: scale(1.04);
+}
+
+.table-continer {
+  background-color: rgba(255, 255, 255, 0.5647058824);
+  border-radius: 10px;
+  width: 98%;
+}
+.table-continer .counter {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+.table-continer .counter:hover, .table-continer .counter:active, .table-continer .counter:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+.table-continer input {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+  width: 100%;
+}
+.table-continer input:hover, .table-continer input:active, .table-continer input:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+.table-continer select {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+  width: 50%;
+}
+.table-continer table {
+  transition: all 0.3s;
+  overflow: hidden !important;
+  width: 100%;
+}
+.table-continer table thead th:last-child {
+  text-align: center;
+}
+.table-continer table tbody tr {
+  transition: all 0.3s;
+}
+.table-continer table tbody tr:hover {
+  background-color: #1F6E8C;
+  color: white;
+  font-weight: bold;
+}
+.table-continer table tbody tr td {
+  transition: 0.1s;
+}
+.table-continer table tbody tr td:hover {
+  font-weight: bold;
+  background-color: #0c2c38;
+}
+.table-continer table tbody .table-icon {
+  transition: all 0.2s;
+}
+.table-continer table tbody .table-icon:hover {
+  color: white;
+  transform: scale(1.4);
+}
+.table-continer table tbody .table-icon-delete {
+  color: #e74c3c;
+}
+.table-continer table tbody .table-icon-edite {
+  color: #f39c12;
+}
+.table-continer .pagination-btn {
+  background-color: #1F6E8C;
+  color: white;
+  border-radius: 100%;
+  margin: 2px;
+  transition: all 0.1s;
+  font-weight: bold;
+}
+.table-continer .pagination-btn.active {
+  background-color: #BE3144;
+  color: white;
+}
+.table-continer .pagination-btn.pagination-btn-icon {
+  color: #1F6E8C;
+  background-color: transparent;
+}
+.table-continer .pagination-btn:hover {
+  transform: scale(1.2);
+}
+
+.patient-home {
+  background-color: rgba(255, 255, 255, 0.5647058824);
+  border-radius: 10px;
+}
+.patient-home .row {
+  background-color: transparent !important;
+}
+.patient-home .isIn {
+  background-color: #2ecc71;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+}
+.patient-home .btn {
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+}
+.patient-home .wating {
+  background-color: #f39c12;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+}
+.patient-home img {
+  border-radius: 100%;
+  background-color: #2ecc71;
+}
+
+.BackDropAlertMessageRow {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.214);
+  margin: 0;
+  padding: 0;
+}
+
+.BackDropAlertMessage {
+  height: 300px;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.738);
+  padding: 10px;
+  border-radius: 8px;
+  top: 40%;
+  right: 5%;
+  left: 5%;
+  margin: auto;
+  color: white;
+}
+.BackDropAlertMessage .delete-icon {
+  background-color: #2ecc71;
+}
+.BackDropAlertMessage .close-icon {
+  background-color: #e74c3c;
+}
+.BackDropAlertMessage .top-icon {
+  height: 20px !important;
+  width: 20px !important;
+}
+.BackDropAlertMessage .info {
+  color: #3498db;
+  font-size: 40px;
+  height: -moz-min-content;
+  height: min-content;
+  margin: 4px;
+}
+.BackDropAlertMessage .icon {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.BackDropAlertMessage .icon:hover {
+  transform: scale(1.2);
+}
+
+.loading {
+  background-color: rgba(255, 255, 255, 0.5647058824);
+  border-radius: 10px;
+}
+.loading img {
+  border-radius: 100%;
+  background-color: #3498db;
+}
+
+.nurse .url, .consultations .url,
+.patients .url, .appointments .url {
+  background-color: rgba(255, 255, 255, 0.5647058824);
+  border-radius: 10px;
+}
+.nurse .url .icon, .consultations .url .icon,
+.patients .url .icon, .appointments .url .icon {
+  color: #BE3144;
+  margin: 0px 5px;
+}
+.nurse .url a, .consultations .url a,
+.patients .url a, .appointments .url a {
+  color: #BE3144;
+}
+.nurse .url a:hover, .nurse .url a:active, .nurse .url a:focus, .consultations .url a:hover, .consultations .url a:active, .consultations .url a:focus,
+.patients .url a:hover,
+.patients .url a:active,
+.patients .url a:focus, .appointments .url a:hover, .appointments .url a:active, .appointments .url a:focus {
+  text-decoration: underline;
+}
+.nurse .url .counter, .consultations .url .counter,
+.patients .url .counter, .appointments .url .counter {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+.nurse .url .counter:hover, .nurse .url .counter:active, .nurse .url .counter:focus, .consultations .url .counter:hover, .consultations .url .counter:active, .consultations .url .counter:focus,
+.patients .url .counter:hover,
+.patients .url .counter:active,
+.patients .url .counter:focus, .appointments .url .counter:hover, .appointments .url .counter:active, .appointments .url .counter:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+.nurse .url input, .nurse .url textarea, .consultations .url input, .consultations .url textarea,
+.patients .url input,
+.patients .url textarea, .appointments .url input, .appointments .url textarea {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+  width: 100%;
+}
+.nurse .url input:hover, .nurse .url input:active, .nurse .url input:focus, .nurse .url textarea:hover, .nurse .url textarea:active, .nurse .url textarea:focus, .consultations .url input:hover, .consultations .url input:active, .consultations .url input:focus, .consultations .url textarea:hover, .consultations .url textarea:active, .consultations .url textarea:focus,
+.patients .url input:hover,
+.patients .url input:active,
+.patients .url input:focus,
+.patients .url textarea:hover,
+.patients .url textarea:active,
+.patients .url textarea:focus, .appointments .url input:hover, .appointments .url input:active, .appointments .url input:focus, .appointments .url textarea:hover, .appointments .url textarea:active, .appointments .url textarea:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+.nurse .url select, .consultations .url select,
+.patients .url select, .appointments .url select {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+  width: 50%;
+}
+.nurse .nurseProfile, .nurse .addConsultation, .consultations .nurseProfile, .consultations .addConsultation,
+.patients .nurseProfile,
+.patients .addConsultation, .appointments .nurseProfile, .appointments .addConsultation {
+  background-color: rgba(255, 255, 255, 0.5647058824);
+  border-radius: 10px;
+}
+.nurse .nurseProfile .row, .nurse .addConsultation .row, .consultations .nurseProfile .row, .consultations .addConsultation .row,
+.patients .nurseProfile .row,
+.patients .addConsultation .row, .appointments .nurseProfile .row, .appointments .addConsultation .row {
+  background-color: transparent !important;
+}
+.nurse .nurseProfile .btn, .nurse .addConsultation .btn, .consultations .nurseProfile .btn, .consultations .addConsultation .btn,
+.patients .nurseProfile .btn,
+.patients .addConsultation .btn, .appointments .nurseProfile .btn, .appointments .addConsultation .btn {
+  background-color: #1F6E8C;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+  width: 40%;
+}
+.nurse .nurseProfile img, .nurse .addConsultation img, .consultations .nurseProfile img, .consultations .addConsultation img,
+.patients .nurseProfile img,
+.patients .addConsultation img, .appointments .nurseProfile img, .appointments .addConsultation img {
+  border-radius: 100%;
+  background-color: #3498db;
+  padding: 3px;
+}
+.nurse form input, .nurse form textarea, .nurse form select, .nurse .header input, .nurse .header textarea, .nurse .header select, .consultations form input, .consultations form textarea, .consultations form select, .consultations .header input, .consultations .header textarea, .consultations .header select,
+.patients form input,
+.patients form textarea,
+.patients form select,
+.patients .header input,
+.patients .header textarea,
+.patients .header select, .appointments form input, .appointments form textarea, .appointments form select, .appointments .header input, .appointments .header textarea, .appointments .header select {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+  width: 70%;
+  resize: none;
+}
+.nurse form input:hover, .nurse form input:active, .nurse form input:focus, .nurse form textarea:hover, .nurse form textarea:active, .nurse form textarea:focus, .nurse form select:hover, .nurse form select:active, .nurse form select:focus, .nurse .header input:hover, .nurse .header input:active, .nurse .header input:focus, .nurse .header textarea:hover, .nurse .header textarea:active, .nurse .header textarea:focus, .nurse .header select:hover, .nurse .header select:active, .nurse .header select:focus, .consultations form input:hover, .consultations form input:active, .consultations form input:focus, .consultations form textarea:hover, .consultations form textarea:active, .consultations form textarea:focus, .consultations form select:hover, .consultations form select:active, .consultations form select:focus, .consultations .header input:hover, .consultations .header input:active, .consultations .header input:focus, .consultations .header textarea:hover, .consultations .header textarea:active, .consultations .header textarea:focus, .consultations .header select:hover, .consultations .header select:active, .consultations .header select:focus,
+.patients form input:hover,
+.patients form input:active,
+.patients form input:focus,
+.patients form textarea:hover,
+.patients form textarea:active,
+.patients form textarea:focus,
+.patients form select:hover,
+.patients form select:active,
+.patients form select:focus,
+.patients .header input:hover,
+.patients .header input:active,
+.patients .header input:focus,
+.patients .header textarea:hover,
+.patients .header textarea:active,
+.patients .header textarea:focus,
+.patients .header select:hover,
+.patients .header select:active,
+.patients .header select:focus, .appointments form input:hover, .appointments form input:active, .appointments form input:focus, .appointments form textarea:hover, .appointments form textarea:active, .appointments form textarea:focus, .appointments form select:hover, .appointments form select:active, .appointments form select:focus, .appointments .header input:hover, .appointments .header input:active, .appointments .header input:focus, .appointments .header textarea:hover, .appointments .header textarea:active, .appointments .header textarea:focus, .appointments .header select:hover, .appointments .header select:active, .appointments .header select:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+
+.basicPage .report {
+  display: flex;
+  height: 150px;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 6px solid rgba(0, 0, 0, 0);
+  border-right-color: rgba(255, 165, 0, 0.5921568627);
+  position: relative;
+  animation: l24 1s infinite linear;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: inherit;
+  animation: inherit;
+  animation-duration: 2s;
+}
+
+.loader:after {
+  animation-duration: 4s;
+}
+
+@keyframes l24 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.addNurseProfile .btn {
+  background-color: #1F6E8C;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+  width: 40%;
+}
+.addNurseProfile img {
+  border-radius: 100%;
+  background-color: #2ecc71;
+}
+.addNurseProfile form {
+  background-color: rgba(164, 160, 160, 0.2823529412) !important;
+  border-radius: 10px;
+}
+.addNurseProfile form input {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+  width: 70%;
+}
+.addNurseProfile form input:hover, .addNurseProfile form input:active, .addNurseProfile form input:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+
+.addPatient .btn {
+  background-color: #1F6E8C;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+  width: 40%;
+}
+.addPatient img {
+  border-radius: 100%;
+  background-color: #2ecc71;
+}
+.addPatient form {
+  background-color: rgba(164, 160, 160, 0.2823529412) !important;
+  border-radius: 10px;
+}
+.addPatient form input,
+.addPatient form select {
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+  width: 70%;
+}
+.addPatient form input:hover, .addPatient form input:active, .addPatient form input:focus,
+.addPatient form select:hover,
+.addPatient form select:active,
+.addPatient form select:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+
+.auth {
+  height: 100vh;
+}
+.auth .btn {
+  background-color: #1F6E8C;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+  width: 40%;
+}
+.auth .bg {
+  flex: 2;
+  background-image: url("./images/2645.jpg");
+  height: 100vh;
+  width: 500px;
+  background-color: #2ecc71;
+  background-size: cover;
+}
+.auth form {
+  height: 60vh;
+  background-color: rgba(231, 231, 231, 0.5843137255);
+  border-radius: 10px;
+}
+.auth form input,
+.auth form select {
+  width: 80%;
+  background-color: white;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.2s;
+  width: 80%;
+}
+.auth form input:hover, .auth form input:active, .auth form input:focus,
+.auth form select:hover,
+.auth form select:active,
+.auth form select:focus {
+  border: 2px #1F6E8C solid;
+  outline: none;
+}
+
+.atualPatient img {
+  background-color: #2ecc71;
+  padding: 2px;
+}
+
+.nextPatient img {
+  background-color: #f39c12;
+  padding: 2px;
+}
+
+@media (max-width: 680px) {
+  .home {
+    width: 96%;
+  }
+  .home .chart,
+  .home .table-continer {
+    width: 96%;
+    margin: 30px 8px;
+    padding: 1em;
+  }
+  .home .chart h1,
+  .home .table-continer h1 {
+    font-size: 12px !important;
+    width: 100% !important;
+  }
+  .home .chart .row,
+  .home .table-continer .row {
+    justify-content: end !important;
+  }
+  .home .chart .row span,
+  .home .table-continer .row span {
+    font-size: 10px !important;
+    margin: 2px !important;
+  }
+  .home .canvas-row {
+    height: 200px !important;
+  }
+  .menu-visible-icon {
+    display: inline !important;
+  }
+  .side-nav {
+    display: none !important;
+    border-right: 1px white solid;
+    margin: 0 !important;
+    padding: 2px !important;
+    transition: all 0.5s ease;
+  }
+  .side-nav .side-nav-icon {
+    color: white;
+    font-size: 20px;
+    margin: 0.1em;
+    padding: 8px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .side-nav .side-nav-icon:hover {
+    background-color: #1F6E8C;
+  }
+  .side-nav .logo {
+    font-size: 16px !important;
+    background-color: transparent !important;
+    color: #1F6E8C !important;
+  }
+  .nav-container {
+    justify-content: end !important;
+  }
+  .top-nav {
+    width: 94%;
+    margin: 0 !important;
+  }
+  .top-nav .right-top-nav {
+    width: auto !important;
+  }
+  .top-nav .right-top-nav div {
+    margin: 2px !important;
+  }
+  .top-nav form {
+    width: auto !important;
+  }
+  .open {
+    transform: translateX(0);
+  }
+  .closed {
+    transform: translateX(-100%);
+  }
+}
+.side-nav-active {
+  display: flex !important;
+}
+
+.canvas-row {
+  height: 400px !important;
+}/*# sourceMappingURL=index.css.map */

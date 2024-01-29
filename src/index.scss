@@ -1,0 +1,1003 @@
+// Importing base Tailwind styles
+@tailwind base;
+
+// Importing Tailwind components
+@tailwind components;
+
+// Importing Tailwind utilities
+@tailwind utilities;
+
+// Importing custom font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+// Custom color variables
+$main-color: #1F6E8C;
+$active-color: #BE3144;
+$color-error: #e74c3c; // Red
+$color-info: #3498db; // Blue
+$color-success: #2ecc71; // Green
+$color-warning: #f39c12;
+
+// Applying custom styles
+* {
+  font-family: 'Heebo', sans-serif !important;
+}
+@media (max-width: 640px) {
+  .react-calendar {
+    *{
+      font-size: 0.6rem !important;
+    }
+  }  
+}
+
+
+@layer components {
+  .bg-img {
+    background-image: url("./images/2645.jpg");
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .main-color {
+    color: #1F6E8C;
+  }
+
+  .active-color {
+    color: #BE3144
+  }
+
+  .color-error {
+    color: #e74c3c
+  }
+
+  // Red
+  .color-info {
+    color: #3498db
+  }
+
+  // Blue
+  .color-success {
+    color: #2ecc71
+  }
+
+  // Green
+  .color-warning {
+    color: #f39c12
+  }
+}
+
+/* Your regular styles */
+
+@media print {
+  /* Styles for print media */
+  @page { margin: 0; }
+  body { margin: 1.6cm; }
+
+  .hide-on-print {
+    display: none; /* Hide elements with this class on print */
+  }
+  .header{
+    width: 50%;
+  }
+}
+
+.react-calendar {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.react-calendar abbr {
+  text-decoration: none;
+}
+
+.react-calendar .react-calendar__tile--now {
+  background-color: $color-success;
+  color: white;
+}
+
+.react-calendar .react-calendar__tile--active {
+  background-color: $active-color;
+  color: white;
+}
+
+.react-calendar .react-calendar__tile--active:enabled:hover,
+.react-calendar .react-calendar__tile--active:enabled:focus {
+  background: $active-color;
+}
+
+.react-calendar .react-calendar__tile {
+  border-radius: 5px;
+  transition: 0.1s;
+  margin: 5px;
+
+  &:hover {
+    background-color: #f39c12 !important;
+    font-weight: bolder;
+    color: white;
+  }
+  
+}
+
+.react-calendar__navigation__arrow,.react-calendar__navigation__label {
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #f39c12 !important;
+    font-weight: bolder;
+    color: white;
+  }
+}
+
+
+.error-404 {
+  background-color: #4BCADB;
+  height: 100vh;
+
+  span {
+    font-family: 'Black Ops One', system-u !important;
+    color: white;
+
+
+  }
+}
+
+.main {
+  background-image: url('./images/2645.jpg');
+
+  margin: 0;
+  /* Remove any default margin on the body */
+  background-position: center;
+  background-repeat: repeat;
+  height: max-content;
+
+  .main-container {
+    height: max-content;
+  }
+}
+
+.side-nav {
+  border-right: 2px white solid;
+
+  .active-link {
+    background-color: $active-color;
+  }
+
+  .side-nav-icon {
+    color: white;
+    font-size: 30px;
+    margin: 0.3em;
+    padding: 8px;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $main-color;
+      transform: scale(1.04);
+    }
+  }
+}
+
+.top-nav {
+  justify-content: space-between;
+
+
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  form {
+    input {
+      background-color: white;
+      border: 2px white solid;
+      border-radius: 20px;
+      padding: 10px;
+      outline: none;
+      transition: 0.2s;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 2px $main-color solid;
+        outline: none;
+      }
+    }
+
+    button {
+      color: $main-color;
+      border-radius: 100%;
+      background-color: white;
+      padding: 10px;
+      margin: 0.3em;
+      transition: 0.2s;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: white;
+        background-color: $main-color;
+      }
+    }
+
+    .input-icon {
+      font-size: 20px;
+    }
+  }
+
+  .fixedSearech {
+
+    width: 100%;
+    margin-top: 5px;
+    background-color: white;
+    border: 2px white solid;
+    border-radius: 20px;
+    padding: 6px;
+    outline: none;
+    transition: 0.2s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 2px $main-color solid;
+      outline: none;
+    }
+
+
+  }
+
+  img {
+    
+    border-radius: 100%;
+    border: 2px white solid;
+    transition: 0.3s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 2px $main-color solid;
+      transform: scale(1.03);
+    }
+  }
+}
+
+.right-top-nav {
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 100%;
+    transition: 0.3s;
+    margin-right: 0.3em;
+
+    &:hover,
+    &:active,
+    &:focus {
+      * {
+        color: white;
+      }
+
+      background-color: $main-color;
+    }
+
+    .right-top-nav-icon {
+     
+      color: $main-color;
+
+    }
+
+  }
+}
+
+.menu-visible-icon {
+  display: none;
+  background-color: white;
+  color: $main-color;
+  padding: 8px;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-size: 40px;
+
+  &:hover {
+    background-color: $main-color;
+    color: white;
+  }
+}
+
+
+
+.home {
+  .home-icon {
+
+    color: white;
+  }
+
+  .chart {
+    background-color: #ffffff90;
+    border-radius: 10px;
+
+    .main-row {
+      margin-bottom: 2em;
+
+    }
+
+    .row {
+      span {
+        color: white;
+        font-size: 16px;
+        background-color: $main-color;
+        padding: 8px;
+        border-radius: 10px;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: mix($main-color, black, 40%);
+          transform: scale(1.04);
+        }
+      }
+    }
+
+
+
+  }
+
+ 
+}
+
+.table-continer {
+  background-color: #ffffff90;
+  border-radius: 10px;
+  width: 98%;
+  .counter{
+    background-color: white;
+    border: 2px white solid;
+    border-radius: 5px;
+    padding: 8px;
+    outline: none;
+    transition: 0.2s;
+    
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 2px $main-color solid;
+      outline: none;
+    }
+  }
+  input {
+    background-color: white;
+    border: 2px white solid;
+    border-radius: 5px;
+    padding: 8px;
+    outline: none;
+    transition: 0.2s;
+    width: 100%;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 2px $main-color solid;
+      outline: none;
+    }
+  }
+
+  select {
+    background-color: white;
+    border: 2px white solid;
+    border-radius: 5px;
+    padding: 8px;
+    outline: none;
+    transition: 0.2s;
+    width: 50%;
+  }
+  table {
+    transition: all 0.3s;
+    overflow: hidden !important;
+    width: 100%;
+
+    thead {
+      th:last-child {
+        text-align: center;
+      }
+    }
+
+    tbody {
+      tr {
+        transition: all .3s;
+
+        &:hover {
+          background-color: $main-color;
+          color: white;
+          font-weight: bold;
+
+        }
+
+        td {
+          transition: .1s;
+
+          &:hover {
+
+            font-weight: bold;
+            background-color: mix($main-color, black, 40%);
+
+          }
+        }
+      }
+
+      .table-icon {
+        transition: all .2s;
+
+        &:hover {
+          color: white;
+          transform: scale(1.4);
+        }
+      }
+
+      .table-icon-delete {
+        color: $color-error;
+
+      }
+
+      .table-icon-edite {
+        color: $color-warning;
+      }
+    }
+  }
+
+  .pagination-btn {
+    background-color: $main-color;
+    color: white;
+    
+    border-radius: 100%;
+    margin: 2px;
+    transition: all 0.1s;
+    font-weight: bold;
+
+    &.active {
+      background-color: $active-color;
+      color: white;
+    }
+
+    &.pagination-btn-icon {
+      color: $main-color;
+      background-color: transparent;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+  }
+
+}
+.patient-home {
+  background-color: #ffffff90;
+  border-radius: 10px;
+
+  .row {
+    background-color: transparent !important;
+  }
+
+  .isIn {
+
+    background-color: $color-success;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .btn {
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .wating {
+
+    background-color: $color-warning;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  img {
+    border-radius: 100%;
+    background-color: $color-success;
+
+  }
+
+
+}
+
+.BackDropAlertMessageRow {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.214);
+  margin: 0;
+  padding: 0;
+}
+
+.BackDropAlertMessage {
+  height: 300px;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.738);
+  padding: 10px;
+
+  border-radius: 8px;
+  top: 40%;
+  right: 5%;
+  left: 5%;
+  margin: auto;
+  color: white;
+
+  .delete-icon {
+    background-color: $color-success;
+
+  }
+
+  .close-icon {
+    background-color: $color-error;
+
+  }
+
+  .top-icon {
+    height: 20px !important;
+    width: 20px !important;
+  }
+
+  .info {
+    color: $color-info;
+    font-size: 40px;
+    height: min-content;
+    margin: 4px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: all .3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.loading {
+  background-color: #ffffff90;
+  border-radius: 10px;
+
+  img {
+
+    border-radius: 100%;
+    background-color: $color-info;
+
+  }
+
+
+
+}
+
+.nurse,.consultations,
+.patients ,.appointments{
+  .url {
+    background-color: #ffffff90;
+    border-radius: 10px;
+
+    .icon {
+      color: $active-color;
+      margin: 0px 5px;
+    }
+
+    a {
+      color: $active-color;
+      &:hover,
+      &:active,
+      &:focus {
+        
+        text-decoration: underline;
+      }
+    }
+
+    .counter{
+      background-color: white;
+      border: 2px white solid;
+      border-radius: 5px;
+      padding: 8px;
+      outline: none;
+      transition: 0.2s;
+      
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 2px $main-color solid;
+        outline: none;
+      }
+    }
+    input,textarea {
+      background-color: white;
+      border: 2px white solid;
+      border-radius: 5px;
+      padding: 8px;
+      outline: none;
+      transition: 0.2s;
+      width: 100%;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 2px $main-color solid;
+        outline: none;
+      }
+    }
+
+    select {
+      background-color: white;
+      border: 2px white solid;
+      border-radius: 5px;
+      padding: 8px;
+      outline: none;
+      transition: 0.2s;
+      width: 50%;
+    }
+  }
+
+  .nurseProfile,.addConsultation {
+    background-color: #ffffff90;
+    border-radius: 10px;
+
+    .row {
+      background-color: transparent !important;
+    }
+
+    .btn {
+      background-color: $main-color;
+      color: white;
+      font-weight: bolder;
+      padding: 5px;
+      border-radius: 5px;
+      width: 40%;
+    }
+
+    img {
+
+      border-radius: 100%;
+      background-color: $color-info;
+      padding: 3px
+    }
+
+    
+  }
+  form,.header{
+    input,textarea ,select{
+      background-color: white;
+      border: 2px white solid;
+      border-radius: 5px;
+      padding: 8px;
+      outline: none;
+      transition: 0.2s;
+      width: 70%;
+      resize: none;
+      &:hover,
+      &:active,
+      &:focus {
+        border: 2px $main-color solid;
+        outline: none;
+      }
+    }
+
+  }
+}
+
+.basicPage{
+  .report{
+    display: flex;
+    height: 150px;
+   
+    
+  }
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 6px solid #0000;
+  border-right-color: #ffa50097;
+  position: relative;
+  animation: l24 1s infinite linear;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: inherit;
+  animation: inherit;
+  animation-duration: 2s;
+}
+
+.loader:after {
+  animation-duration: 4s;
+}
+
+@keyframes l24 {
+  100% {
+    transform: rotate(1turn)
+  }
+}
+
+.addNurseProfile {
+
+
+  .btn {
+    background-color: $main-color;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 5px;
+    width: 40%;
+  }
+
+  img {
+
+    border-radius: 100%;
+    background-color: $color-success;
+
+  }
+
+  form {
+    background-color: #a4a0a048 !important;
+    border-radius: 10px;
+
+    input {
+      background-color: white;
+      border: 2px white solid;
+      border-radius: 5px;
+      padding: 8px;
+      outline: none;
+      transition: 0.2s;
+      width: 70%;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 2px $main-color solid;
+        outline: none;
+      }
+    }
+
+  }
+}
+
+.addPatient {
+
+
+  .btn {
+    background-color: $main-color;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 5px;
+    width: 40%;
+  }
+
+  img {
+
+    border-radius: 100%;
+    background-color: $color-success;
+
+  }
+
+  form {
+    background-color: #a4a0a048 !important;
+    border-radius: 10px;
+
+    input,
+    select {
+      background-color: white;
+      border: 2px white solid;
+      border-radius: 5px;
+      padding: 8px;
+      outline: none;
+      transition: 0.2s;
+      width: 70%;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 2px $main-color solid;
+        outline: none;
+      }
+    }
+
+  }
+}
+
+.auth {
+  height: 100vh;
+
+  .btn {
+    background-color: $main-color;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 5px;
+    width: 40%;
+  }
+
+  .bg {
+    flex: 2;
+    background-image: url("./images/2645.jpg");
+    height: 100vh;
+    width: 500px;
+    background-color: $color-success;
+    background-size: cover;
+  }
+
+  form {
+    height: 60vh;
+    background-color: #e7e7e795;
+    border-radius: 10px;
+
+    input,
+    select {
+      width: 80%;
+      background-color: white;
+      border: 2px white solid;
+      border-radius: 5px;
+      padding: 8px;
+      outline: none;
+      transition: 0.2s;
+      width: 80%;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 2px $main-color solid;
+        outline: none;
+      }
+    }
+
+  }
+}
+
+.atualPatient {
+  img {
+    background-color: $color-success;
+    padding: 2px;
+  }
+}
+
+.nextPatient {
+  img {
+    background-color: $color-warning;
+    padding: 2px;
+  }
+}
+
+// Media query for smaller screens
+@media (max-width: 680px) {
+
+  .home {
+    width: 96%;
+
+    .chart,
+    .table-continer {
+      width: 96%;
+      margin: 30px 8px;
+      padding: 1em;
+      
+    
+      h1 {
+        font-size: 12px !important;
+        width: 100% !important;
+      }
+
+      .row {
+        justify-content: end !important;
+
+        span {
+          font-size: 10px !important;
+          margin: 2px !important;
+        }
+      }
+    }
+
+    .canvas-row {
+      height: 200px !important;
+
+    }
+  }
+
+  .menu-visible-icon {
+    display: inline !important;
+  }
+
+  .side-nav {
+    display: none !important;
+    border-right: 1px white solid;
+    margin: 0 !important;
+    padding: 2px !important;
+    transition: all 0.5s ease;
+
+    .side-nav-icon {
+      color: white;
+      font-size: 20px;
+      margin: 0.1em;
+      padding: 8px;
+      border-radius: 10px;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+
+    .logo {
+      font-size: 16px !important;
+      background-color: transparent !important;
+      color: $main-color !important;
+    }
+  }
+
+  .nav-container {
+    justify-content: end !important;
+  }
+
+  .top-nav {
+    width: 94%;
+    margin: 0 !important;
+
+
+    .right-top-nav {
+      width: auto !important;
+
+      div {
+        margin: 2px !important;
+      }
+    }
+
+    
+
+    form {
+      width: auto !important;
+
+
+    }
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+
+  .closed {
+    transform: translateX(-100%);
+  }
+}
+
+
+// Styling for the active state of the side nav
+.side-nav-active {
+  display: flex !important;
+  
+}
+
+.canvas-row {
+  height: 400px !important;
+
+}
